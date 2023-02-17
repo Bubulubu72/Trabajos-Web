@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Practica 1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+  <body>
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <!-- ////////////////////////////////////////////// -->
+
+    <style>
+        input[type="text"].banner {
+            width: 400px;
+        }
+
+        button.color, span.color_font {
+            color: white;
+        }
+
+        button.color_m{
+            color: white;
+            border-color: white;
+        }
+
+        img.icard{
+            text-align: center;
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 150px; 
+        }
+
+        input[type="text"].media-price{
+            text-align: center;
+            display: block;
+            width: 130px;
+        }
+
+        input[type="number"].media-cantidad{
+            text-align: start;
+            width: 170px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {  
+            opacity: 1;
+        }
+
+        div.media-body p{
+            padding-left: 10px;
+            font-size: large;
+        }
+
+        button.pagar{
+            color: green;
+            font-size: 25px;
+        }
+
+        button.cancelar{
+            color: red;
+        }
+
+    </style>
+
+    <!-- //  NavBar // -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(100, 99, 99);">
+        <a class="navbar-brand mt-2" href="index.html">DASW</a> <!--Principal-->
+
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+            <ul class="navbar-nav mr-auto mt-2"> <!-- Bara Buscadora + boton-->
+                <li class="nav-item active">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control banner" type="text" placeholder="Encuentra de todo Empieza a buscar">
+                        <button class="btn btn-outline-success my-2 my-sm-2 color_m" type="submit">Buscar</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+           
+        <ul class="mr-0 mt-4 mx-0 "> <!-- Dropdown-->
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle color" type="button" id="mi_cuenta" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta      
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mi_cuenta" >
+
+                        <a type="button" class=" dropdown-item" href="index.html">Home</a>
+
+                        <button type="button" class="btn dropdown-item" data-toggle="modal" data-target="#ingresar" hidden> Ingresar</button>
+                        <button type="button" class="btn dropdown-item" data-toggle="modal" data-target="#Registro" hidden> Registro</button>
+                        <div class="dropdown-divider" hidden></div>
+                        <a class="dropdown-item" href="#" hidden>Mis Pedidos</a>
+                    </div>
+                </div>
+                <a class="btn" href="shopping_cart.html" role="button">
+                    <span class="fa fa-shopping-cart mt-sm-2 mx-0 ml-auto color_font" aria-hidden="true"> 2 </span>
+                </a>
+            
+        </ul>
+
+    </nav>
+
+<div class="container pt-5 pb-3">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5>Pedido del dia: 12-febrero  </h5>
+                </button>
+                </h5>
+            </div>
+      
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="container container-lg p-3 my-3 border">
+                        <div class="media ">
+                            <div class="media-left ">
+                                <img class="mr-3 icard" src="./img/Manzanas.png" 
+                                    alt="Generic placeholder image">
+                            </div>
+                            <div class="media-body px- py-">
+                                <h5>Manzana Golden</h5>
+                                <p>Canidad: 5</p>
+                                <p>precion total: $120.00</p>
+                            </div>
+                            <div class="media-right">
+                                <button type="button" class="btn btn-primary btn-sm btn-block">
+                                    <p>Archivar Pedido</p><span class="fa fa-archive"> </span>
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm btn-block">
+                                    <span class="fa fa-pencil-alt"></span>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm btn-block">
+                                    <span class="fa fa-trash-alt"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h5>Pedido el dia: 05-febrero </h5>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="container container-lg p-3 my-3 border">
+                        <div class="media">
+                            <div class="media-left">
+                                <img class="mr-3 icard" src="./img/Platano.jfif" 
+                                    alt="Generic placeholder image">
+                            </div>
+                            <div class="media-body px- py-">
+                                <h5>Platano</h5>
+                                <p>Canidad: 3</p>
+                                <p>precion total: $158.00</p>
+                            </div>
+                            <div class="media-right">
+                                <button type="button" class="btn btn-primary btn-sm btn-block">
+                                    <p>Archivar Pedido</p><span class="fa fa-archive"> </span>
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm btn-block">
+                                    <span class="fa fa-pencil-alt"></span>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm btn-block">
+                                    <span class="fa fa-trash-alt"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h5>Pedido el dia: 27-Enero  </h5></button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="container container-lg p-3 my-3 border">
+                        <div class="media">
+                            <div class="media-left ">
+                                <img class="mr-3 icard" src="./img/fruta.jfif" 
+                                    alt="Generic placeholder image">
+                            </div>
+                            <div class="media-body px- py-">
+                                <h5>Mango</h5>
+                                <p>Canidad: 4</p>
+                                <p>precion total: $194.00</p>
+                            </div>
+                            <div class="media-right">
+                                <button type="button" class="btn btn-primary btn-sm btn-block">
+                                    <p>Archivar Pedido</p><span class="fa fa-archive"> </span>
+                                </button>
+                                <button type="button" class="btn btn-info btn-sm btn-block">
+                                    <span class="fa fa-pencil-alt"></span>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm btn-block">
+                                    <span class="fa fa-trash-alt"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <center><a class="btn btn-primary" href="index.html" role="button">Return Home</a></center>
+
+</body>
+</html>

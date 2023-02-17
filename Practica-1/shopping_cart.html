@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Practica 1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <!-- ////////////////////////////////////////////// -->
+
+    <style>
+        input[type="text"].banner {
+            width: 400px;
+        }
+
+        button.color, span.color_font {
+            color: white;
+        }
+
+        button.color_m{
+            color: white;
+            border-color: white;
+        }
+
+        img.icard{
+            text-align: center;
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 150px; 
+        }
+
+        input[type="text"].media-price{
+            text-align: center;
+            display: block;
+            width: 130px;
+        }
+
+        input[type="number"].media-cantidad{
+            text-align: start;
+            width: 170px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {  
+            opacity: 1;
+        }
+
+        div.media-body p{
+            padding-left: 10px;
+            font-size: large;
+        }
+
+        button.pagar{
+            color: green;
+            font-size: 25px;
+        }
+
+        button.cancelar{
+            color: red;
+        }
+
+    </style>
+
+    <!-- //  NavBar // -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(100, 99, 99);">
+        <a class="navbar-brand mt-2" href="index.html">DASW</a> <!--Principal-->
+
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+            <ul class="navbar-nav mr-auto mt-2"> <!-- Bara Buscadora + boton-->
+                <li class="nav-item active">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control banner" type="text" placeholder="Encuentra de todo Empieza a buscar">
+                        <button class="btn btn-outline-success my-2 my-sm-2 color_m" type="submit">Buscar</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+           
+        <ul class="mr-0 mt-4 mx-0 "> <!-- Dropdown-->
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle color" type="button" id="mi_cuenta" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta      
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mi_cuenta" >
+                        
+                        <a type="button" class=" dropdown-item" href="index.html">Home</a>
+
+                        <button type="button" class="btn dropdown-item" hidden
+                            data-toggle="modal" data-target="#ingresar"> Ingresar</button>
+                        <button type="button" class="btn dropdown-item" hidden
+                            data-toggle="modal" data-target="#Registro"> Registro</button>
+
+                        
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="orders.html">Mis Pedidos</a>
+                    </div>
+                </div>
+                <a class="btn" href="#" role="button">
+                    <span class="fa fa-shopping-cart mt-sm-2 mx-0 ml-auto color_font" aria-hidden="true"> 2 </span>
+                </a>
+            
+        </ul>
+
+    </nav>
+
+    <h1 class="pt-3"><center>Resumen de Compra</center></h1><br>
+
+    
+    <!-- align-self-center / col-10-->
+
+
+    <div class="container">
+
+        <div class="media">
+
+            <div class="media-left w-75">
+                <div class="media border">
+                    <div class="media-body mt-3 ml-4">  
+                        <h2>Melon Chino  
+                        <button type="button" class="btn btn-danger btn-md">
+                            <span class="fa fa-trash-alt"></span>
+                        </button>
+                        </h2>
+                        <div class="input-group mt-4 ">
+                            <div class="inut-group-prepend">
+                                <span class="input-group-text">Cantidad:</span>
+                            </div>
+                            <input type="number" class="media-cantidad pl-2" min="1" max="5" placeholder="1">
+                    
+                            <button type="button" class="btn btn-info btn-md">
+                                <span class="fa fa-pencil-alt"></span>
+                            </button>
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="inut-group-prepend">
+                                <span class="input-group-text">Precio:</span>
+                            </div>
+                            <input type="text" class="media-price" placeholder="30.00" readonly>
+
+                            <div class="inut-group-prepend">
+                            <span class="input-group-text">$m.n.</span>
+                            </div>
+                    
+                        </div>
+
+                    </div>
+                    <div class="media-right">
+                        <img class=" m-4 icard" src="./img/Melon.jfif" alt="Generic placeholder image">
+                    </div>
+                </div>
+
+                <div class="media border">
+                    <div class="media-body mt-2 ml-4">  
+                        <h2>Manzana Golden  
+                        <button type="button" class="btn btn-danger btn-md">
+                            <span class="fa fa-trash-alt"></span>
+                        </button>
+                        </h2>
+                        <div class="input-group mt-4">
+                            <div class="inut-group-prepend">
+                                <span class="input-group-text">Cantidad:</span>
+                            </div>
+                            <input type="number" class="media-cantidad pl-2" min="1" max="5" placeholder="5">
+                    
+                            <button type="button" class="btn btn-info btn-md">
+                            <span class="fa fa-pencil-alt"></span>
+                            </button>
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="inut-group-prepend">
+                                <span class="input-group-text">Precio:</span>
+                            </div>
+                            <input type="text" class="media-price" placeholder="53.20" readonly>
+
+                            <div class="inut-group-prepend">
+                                <span class="input-group-text">$m.n.</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="media-right">
+                        <img class=" m-4 icard" src="./img/Manzanas.png" alt="Generic placeholder image">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="media-right border ml-3 col-4">
+                <div class="media-body">
+                    <h2 class="pt-3 pl-2">Total de Compra</h2>
+                    <hr>  
+                    <p>Melon chino: 1 x 30.00</p>
+                    <p>Platano: 5 x 52.20</p>
+                    <p>Costo de envío: 30.00</p>
+                    <hr>
+                    <p>Monto a pagar: 321.00</p>
+
+                    <button class="btn border border-success form-control mb-2 pagar" type="button">Pagar</button>
+
+                    <button class="btn border border-danger form-control mb-4 cancelar" type="button">Cancelar</button>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+   
+
+        
+
+
+
+
+    
+
+
+
+</body>
+</html>
