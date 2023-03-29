@@ -1,0 +1,110 @@
+@host = http://localhost:3100
+
+### PROBANDO EL SERVIDOR
+get {{host}}
+
+#################################################
+### PRUEBAS DE LA API PRODUCTS ###
+
+### GET PRODCUTOS AS ADMIN
+get http://localhost:3100/api/products
+x-token: admin 
+
+### GET PRODCUTOS NOT AS ADMIN
+get http://localhost:3100/api/products
+x-token:
+
+### GET PRODCUTOS X ID
+get http://localhost:3100/api/products/cs0TxKQzNzmgTZDOwDx9G
+
+### GET PRODCUTS WITH FILTER NOT AS ADMIN
+#title / description / imageURL / unti / max & min / category
+get {{host}}/api/products?description=fresa
+x-token:
+
+### GET PRODCUTS WITH FILTER AS ADMIN
+#title / description / imageURL / unti / max & min / category
+get {{host}}/api/products?min=1&&max=35
+x-token: admin
+
+### POST PRODUCTS
+post {{host}}/api/products
+Content-Type: application/json
+
+{
+    "title": "Borrador",
+    "descripcion": "Listo para probar",
+    "imageURL": "sin-valdiar",
+    "unit": "Falsa",
+    "stock": 1,
+    "pricePerUnit": 9999.99,
+    "category": "NOTREAL"
+}
+
+# {
+#     "title": "Fresas",
+#     "descripcion": "Rojas",
+#     "imageURL": "sin-valdiar",
+#     "unit": "Fruta",
+#    "stock": 25,
+#     "pricePerUnit": 27,
+#     "category": "Postre"
+#  }
+
+# {
+#     "title": "Algodon",
+#     "descripcion": "Blanco",
+#     "imageURL": "sin-valdiar",
+#     "unit": "Planta",
+#     "stock": 25,
+#     "pricePerUnit": 50.5,
+#     "category": "Dulce"
+# }
+
+### DELETE PRODUCTS
+delete {{host}}/api/products/Cbv-gg0kSB5pCY0P0Poli
+x-token: admin
+
+### PUT PRODCUTS / ID
+put {{host}}/api/products/Cbv-gg0kSB5pCY0P0Poli
+Content-Type: application/json
+x-token: admin
+
+{
+    "title": "Rocas",
+    "descripcion": "Grises o de colores",
+    "imageURL": "sin-valdiar",
+    "unit": "Dura",
+   "stock": 45,
+    "pricePerUnit": 2,
+    "category": "Piedras Naturales"
+}
+
+### GET CART
+get {{host}}/api/products/cart
+x-user: Checo
+
+### GET CART
+get {{host}}/api/products/cart
+x-user: Bubu
+
+### POST CART
+post {{host}}/api/products/cart
+Content-Type: application/json
+x-user: Checo
+
+[
+    {
+        "id": "cs0TxKQzNzmgTZDOwDx9G",
+        "cantidad": 2
+    },
+    {
+        "id": "Ff0wd9nY5YCfJqITSXF4N",
+        "cantidad": 3
+    },
+    {
+        "id": "zTDl8e7N_DXLW8oJL4uCP",
+        "cantidad": 1
+    }
+]
+
