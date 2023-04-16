@@ -1,0 +1,67 @@
+
+@host = https://products-dasw.onrender.com 
+
+###
+get {{host}}
+
+### GET PRODUCTS
+get {{host}}/api/products
+x-expediente: 724195
+x-auth: admin
+
+### POST PRODCUTOS
+post {{host}}/api/products
+x-expediente: 724195
+x-auth: admin
+Content-Type: application/json
+
+{
+    "title": "Sandia",
+    "description": "Grande sabrosa y jugosa, ademas de verde",
+    "pricePerUnit": 80.66,
+    "stock": 22,
+    "category": "Categoria 4",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm5HB5p2s7E3Qd9sEezzFLSyPB3_sa3PIQIw&usqp=CAU",
+    "unit": "Piezas"
+}
+
+### ID
+PUT {{host}}/api/products/vNZXgfD7v8qfNG6K_LNUG
+x-expediente: 724195
+x-auth: admin
+Content-Type: application/json
+
+{
+    "title": "edit",
+    "description": "para editar",
+    "pricePerUnit": ,
+    "stock": ,
+    "category": "Frutas",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKa6TqD2KkOe12EVNRwEZIghHco0lU7E1iVA&usqp=CAU",
+    "unit": "edit"
+}
+
+
+### GET PRODUCTS
+get {{host}}/api/products
+x-expediente: 724195
+
+### en x-user debes poner el correo del usuario
+GET  {{host}}/api/carts
+x-expediente: 724195
+x-user: is724195@iteso.mx
+
+### en x-user debes poner el correo del usuario
+post {{host}}/api/carts/-7YDWS0SvQme3C8YO72zk
+x-expediente: 724195
+x-user: is724195@iteso.mx
+Content-Type: application/json
+
+{
+    "amount": 2
+}
+
+###
+DELETE   {{host}}/api/carts/fr2m4eM478EurNXGAssmD
+x-expediente: 724195
+x-user: is724195@iteso.mx
