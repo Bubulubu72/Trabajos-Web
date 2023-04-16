@@ -49,12 +49,12 @@ x-expediente: 724195
 ### en x-user debes poner el correo del usuario
 GET  {{host}}/api/carts
 x-expediente: 724195
-x-user: is724195@iteso.mx
+x-user: 724195@
 
 ### en x-user debes poner el correo del usuario
 post {{host}}/api/carts/-7YDWS0SvQme3C8YO72zk
 x-expediente: 724195
-x-user: is724195@iteso.mx
+x-user: 724195@
 Content-Type: application/json
 
 {
@@ -64,4 +64,4 @@ Content-Type: application/json
 ###
 DELETE   {{host}}/api/carts/fr2m4eM478EurNXGAssmD
 x-expediente: 724195
-x-user: is724195@iteso.mx
+x-user: 724195@
