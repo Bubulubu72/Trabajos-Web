@@ -4,7 +4,7 @@ async function loadCart(){
         method: "GET",
         headers:{
             "x-expediente": 724195,
-            "x-user": "is724195@iteso.mx"
+            "x-user": "724195@"
         }
     })
 
